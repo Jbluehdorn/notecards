@@ -1,7 +1,13 @@
-import express from 'express'
-const app = express()
+import Express from 'express'
+import CustomResponses from './middleware/CustomResponses'
 
-app.use('/api', require('./app/routes/api'))
-app.use('/', require('./app/routes/web'))
+const app = Express()
 
-app.listen(8000, () => console.log('App listening on 8000'))
+app.use(CustomResponses)
+
+require('./config/mongoose')(app)
+require('./app/api')(app)
+// require('./app/web')(app)
+
+//Connect to Database and start app
+app.listen(process.env.SERVER_PORT, () => console.log(`App listening on ${process.env.SERVER_PORT}`))
