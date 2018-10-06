@@ -1,5 +1,7 @@
 import cardsRouter from './cards/router'
 
+let prefix = '/api'
+
 module.exports = (app) => {
-    app.use('/cards', cardsRouter)
+    app.use(`${prefix}/cards`, cardsRouter)
 }

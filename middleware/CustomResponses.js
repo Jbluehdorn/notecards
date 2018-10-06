@@ -1,8 +1,14 @@
 let customResponses = {
-    success(payload) {
+    success(body) {
         return this.status(200).json({
             success: true,
-            payload
+            body
+        })
+    },
+    error(body) {
+        return this.status(400).json({
+            success: false,
+            body
         })
     }
 }
