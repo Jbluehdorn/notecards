@@ -1,9 +1,10 @@
 import mongoose from 'mongoose'
 
-let Card = mongoose.model('Card')
+let Card = mongoose.model('card')
 
 let createCard = async data => {
     let card = new Card(data)
+
     let query = await card.save()
 
     return query
