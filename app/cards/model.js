@@ -4,7 +4,7 @@ let Schema = mongoose.Schema
 
 let CardSchema = new Schema({
     body: String,
-    group: Schema.Types.ObjectId
+    group_id: Schema.Types.ObjectId
 }, {timestamps: true})
 
 module.exports = mongoose.model('card', CardSchema)

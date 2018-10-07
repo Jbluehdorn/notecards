@@ -9,7 +9,7 @@ let createGroup = async data => {
     return query
 }
 
-let findGroups = () => Group.find()
+let findGroups = () => Group.find().populate('group_cards')
 
 let findGroup = id => Group.findById(id).populate('group_cards')
 

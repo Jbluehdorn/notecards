@@ -17,7 +17,7 @@ let GroupSchema = new Schema({
 GroupSchema.virtual('group_cards', {
     ref: 'card',
     localField: '_id',
-    foreignField: 'group'
+    foreignField: 'group_id'
 })
 
 module.exports = mongoose.model('group', GroupSchema)
